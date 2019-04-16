@@ -24,7 +24,7 @@ public class Controller : MonoBehaviour
         }
         } */	
   void OnTriggerStay2D(Collider2D other){
-        if (other.gameObject.CompareTag ("Base")){
+        if (other.gameObject.CompareTag ("Top")){
             count = count + 1;
             SetCountText();
             direction += Vector2.down;
@@ -67,8 +67,6 @@ public class Controller : MonoBehaviour
        GetInputBack();
        if (Input.GetButtonDown("Fire1") && !isAttacking)
            isAttacking = true;
-       
-
    }
 
    public void Move(){
@@ -116,6 +114,10 @@ public class Controller : MonoBehaviour
        
        
    }
+   void SetTurnText(){
+       turnText.text = "Turns: " + turn.ToString();
+    }
+
    void SetCountText(){
        countText.text = "Remaining Steps: " + count.ToString();
     }
@@ -130,17 +132,15 @@ public class Controller : MonoBehaviour
 
 
     }
-    if(Input.GetKeyDown(KeyCode.U))
-    {
-      BackToPosition = Vector2.zero;
-      count = 10;
-      SetCountText();
-      turn = turn + 1;
-      SetTurnText();
-    }
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+        BackToPosition = Vector2.zero;
+        count = 10;
+        SetCountText();
+        turn = turn + 1;
+        SetTurnText();
+        }
     }
     
-   void SetTurnText(){
-       turnText.text = "Turns: " + turn.ToString();
-    }
+   
 }
