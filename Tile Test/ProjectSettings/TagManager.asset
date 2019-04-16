@@ -10,6 +10,7 @@ TagManager:
   - Bottom
   - bulletshoot
   - Top
+  - Gegenspieler
   layers:
   - Default
   - TransparentFX

@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Bullet : MonoBehaviour
 {   
-    public float speed;
-    public Rigidbody2D rb2d;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb2d.velocity = transform.right * speed;
-
+        rb.velocity = transform.right * speed;
     }
+    void OnTriggerStay2D(Collider2D LOL)
+    {
+        Debug.Log(LOL.name);
+        Destroy(gameObject);
+    }
+        
 
    
 }

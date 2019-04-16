@@ -118,7 +118,7 @@ public class Controller : MonoBehaviour
        turnText.text = "Turns: " + turn.ToString();
     }
 
-   void SetCountText(){
+   public void SetCountText(){
        countText.text = "Remaining Steps: " + count.ToString();
     }
     /* count.ToString = irgendeine variable zu dem Text */
