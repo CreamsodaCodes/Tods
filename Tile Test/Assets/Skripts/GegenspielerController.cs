@@ -36,7 +36,7 @@ public class GegenspielerController : MonoBehaviour
    private void GetInput(){
 
        direction = Vector2.zero;
-       if(TurnSpeicher.Player1 = false){
+       if(TurnSpeicher.Player1 == false){
        if(count > 0){
         if(Input.GetKeyDown(KeyCode.W)){
             direction += Vector2.up;
@@ -64,7 +64,7 @@ public class GegenspielerController : MonoBehaviour
         }
        }}}
         private void GetInputBack(){
-        if(TurnSpeicher.Player1 = false){
+        if(TurnSpeicher.Player1 == false){
          if(Input.GetKeyDown(KeyCode.Z))
          {
              MoveBack();
@@ -72,15 +72,19 @@ public class GegenspielerController : MonoBehaviour
              count = 10;
              //SetCountText();
          }
-         if(Input.GetKeyDown(KeyCode.U))
+         if(Input.GetKeyDown(KeyCode.I))
          {
          BackToPosition = Vector2.zero;
+         TurnSpeicher.Player1 = true;
          count = 10;
          //SetCountText();
          TurnSpeicher.turn = TurnSpeicher.turn + 1;
-         TurnSpeicher.Player1 = true;
+         
          //SetTurnText();
          }
+        }
+        else{
+            Debug.Log (count);
         }
     }
 
