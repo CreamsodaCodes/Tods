@@ -11415,6 +11415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countText: {fileID: 863224028}
   turnText: {fileID: 1103213103}
+  Leben: 0
 --- !u!61 &1431153783
 BoxCollider2D:
   m_ObjectHideFlags: 0
