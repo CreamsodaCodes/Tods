@@ -64,7 +64,7 @@ public class Controller : MonoBehaviour
 
             Move();
         }
-        }
+        } 
 
     void Start(){
         Player1 = true;
@@ -125,7 +125,11 @@ public class Controller : MonoBehaviour
             SetCountText();
         }}
          
+       }
        
+       
+       
+   }
    void SetTurnText(){
        turnText.text = "Turns: " + turn.ToString();
     }
@@ -153,11 +157,8 @@ public class Controller : MonoBehaviour
         
         SetTurnText();
         }
-        if(Input.GetKeyDown(KeyCode.Q))
-        {Player1 = false;}
-      }
-      else{
-          Debug.Log (count);
+        
+      
       }
     }
     void inputShot(){
