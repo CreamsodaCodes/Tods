@@ -125,15 +125,7 @@ public class Controller : MonoBehaviour
             SetCountText();
         }}
          
-       }
-       if(Input.GetKeyDown(KeyCode.P))
-            {
-                lifeController.leben = lifeController.leben - 1;
-                lifeController.SetLebenText();
-            }
        
-       
-   }
    void SetTurnText(){
        turnText.text = "Turns: " + turn.ToString();
     }
