@@ -16,7 +16,17 @@ public class Controller : MonoBehaviour
     private Vector2 BackToPosition;
     private int count;
     private int turn;
+
+    //Braucht Jemand diesen Bool ? Weil ich glaub der ist von dem ersten versuch zu schießen,wenn niemand ihn braucht bitte ihn und den komentar löschen
     private bool isAttacking = false;
+
+    funktionenSpeicher alleFunktionen;
+
+
+
+
+
+
 	/*void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag ("Base")){
             count = count + 1;
@@ -62,10 +72,12 @@ public class Controller : MonoBehaviour
         SetCountText(); 
         turn = 0;   
         SetTurnText();
+        alleFunktionen = GameObject.Find("FunktionenSpeicher").GetComponent<funktionenSpeicher> ();
+
     }
     private void Update() {
         
-       GetInput();
+       funktionenSpeicher.GetInput();
        Move();
        GetInputBack();
        if (Input.GetButtonDown("Fire1") && !isAttacking)
@@ -83,11 +95,11 @@ public class Controller : MonoBehaviour
    }
 
 
+   /*Speicher:
    private void GetInput(){
 
        direction = Vector2.zero;
-       /* ohne des Zero wird des immer mehr also wenn man zweimal w drückt dann ist die richtung stärker als davor und wenn man dann einmal s drückt geht es nicht zurück also wie ne zahl die aber in vier richtungen 
-       geht vlht x u nd y mit - und + */
+       
        if(count > 0){
         if(Input.GetKeyDown(KeyCode.W)){
             direction += Vector2.up;
@@ -112,7 +124,9 @@ public class Controller : MonoBehaviour
             BackToPosition += Vector2.left;
             count = count - 1;
             SetCountText();
-        }
+        } 
+        */
+        
          
        }
        if(Input.GetKeyDown(KeyCode.P))
