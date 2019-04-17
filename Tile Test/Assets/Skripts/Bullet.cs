@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {   
-    
+
+    public Controller BulletController;
+
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -21,6 +23,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(LOL.name);
         Destroy(gameObject);
+        Debug.Log(BulletController.Leben);
     }
         
 
