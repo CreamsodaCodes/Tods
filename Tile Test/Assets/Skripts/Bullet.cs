@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {   
-    Controller BulletController;
+    
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
-        Debug.Log(BulletController.Leben);
+
         
     }
     void OnTriggerStay2D(Collider2D LOL)

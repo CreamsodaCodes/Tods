@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
+    [SerializeField]
+    public lebenGegenspieler lifeController;
     [SerializeField]  
     public Text countText;
     [SerializeField]
@@ -15,8 +17,6 @@ public class Controller : MonoBehaviour
     private int count;
     private int turn;
     private bool isAttacking = false;
-    [SerializeField]
-    public int Leben;
 	/*void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag ("Base")){
             count = count + 1;
@@ -58,7 +58,6 @@ public class Controller : MonoBehaviour
         }
 
     void Start(){
-        Leben = 10;
         count = 10;
         SetCountText(); 
         turn = 0;   
@@ -114,7 +113,13 @@ public class Controller : MonoBehaviour
             count = count - 1;
             SetCountText();
         }
+         
        }
+       if(Input.GetKeyDown(KeyCode.P))
+            {
+                lifeController.leben = lifeController.leben - 1;
+                lifeController.SetLebenText();
+            }
        
        
    }
@@ -127,15 +132,13 @@ public class Controller : MonoBehaviour
     }
     /* count.ToString = irgendeine variable zu dem Text */
     private void GetInputBack(){
-        if(Input.GetKeyDown(KeyCode.Z)){
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
             MoveBack();
             BackToPosition = Vector2.zero;
             count = 10;
             SetCountText();
-
-
-
-    }
+        }
         if(Input.GetKeyDown(KeyCode.U))
         {
         BackToPosition = Vector2.zero;
@@ -144,6 +147,12 @@ public class Controller : MonoBehaviour
         turn = turn + 1;
         SetTurnText();
         }
+    }
+    void inputShot(){
+        if(Input.GetKeyDown(KeyCode.P))
+            {
+                lifeController.leben = lifeController.leben - 1;
+            }
     }
     
    
