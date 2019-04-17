@@ -15,6 +15,8 @@ public class Controller : MonoBehaviour
     private int count;
     private int turn;
     private bool isAttacking = false;
+    [SerializeField]
+    public int Leben;
 	/*void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag ("Base")){
             count = count + 1;
@@ -56,12 +58,14 @@ public class Controller : MonoBehaviour
         }
 
     void Start(){
+        Leben = 10;
         count = 10;
         SetCountText(); 
         turn = 0;   
         SetTurnText();
     }
     private void Update() {
+        
        GetInput();
        Move();
        GetInputBack();
