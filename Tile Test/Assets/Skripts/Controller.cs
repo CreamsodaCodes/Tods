@@ -18,14 +18,6 @@ public class Controller : MonoBehaviour
     private int count;
     public int turn;
 
-    //Braucht Jemand diesen Bool ? Weil ich glaub der ist von dem ersten versuch zu schießen,wenn niemand ihn braucht bitte ihn und den komentar löschen
-    private bool isAttacking = false;
-
-
-
-
-
-
 	/*void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag ("Base")){
             count = count + 1;
@@ -72,23 +64,22 @@ public class Controller : MonoBehaviour
         turn = 0;   
         SetTurnText();
     }
-    private void Update() {
+    void Update() {
         
        GetInput();
        Move();
        GetInputBack();
-       if (Input.GetButtonDown("Fire1") && !isAttacking)
-           isAttacking = true;
+       inputShot();
    }
 
    private void Move(){
-     transform.Translate(direction*1);
+     transform.Translate(direction *1 );
      /*tarnsform = das menu oben links bei unity... Translate heißt glaub umwandeln oder so... direction ist die funktion in der wir die richtung bestimmen in dem wir nem vector + richtung rechnen und 
      dann * 1 für 1 feld in die richtung  */
 
    }
    private void MoveBack(){
-     transform.Translate(BackToPosition*1);
+     transform.Translate(BackToPosition * 1);
    }
 
 
@@ -122,7 +113,10 @@ public class Controller : MonoBehaviour
             BackToPosition += Vector2.left;
             count = count - 1;
             SetCountText();
-        }}
+        }
+        }
+      }
+   }
          
        
    void SetTurnText(){
@@ -144,20 +138,21 @@ public class Controller : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.U))
         {
-        BackToPosition = Vector2.zero;
-        count = 10;
-        SetCountText();
-        turn = turn + 1;
-        Player1 = false;
-        SetTurnText();
+            BackToPosition = Vector2.zero;
+            count = 10;
+            SetCountText();
+            turn = turn + 1;
+            Player1 = false;
+            SetTurnText();
         }
       }
     }
     void inputShot(){
         if(Input.GetKeyDown(KeyCode.P))
-            {
-                lifeController.leben = lifeController.leben - 1;
-            }
+        {
+            lifeController.leben = lifeController.leben - 1;
+            lifeController.SetLebenText();
+        }
     }
     
    

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GegenspielerController : MonoBehaviour
 {   
+    
     private Vector2 direction;
     private Vector2 Playerposition;
     private Vector2 BackToPosition;

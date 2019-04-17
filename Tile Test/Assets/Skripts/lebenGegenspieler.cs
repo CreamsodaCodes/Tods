@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class lebenGegenspieler : MonoBehaviour
 {
-    
     [SerializeField]
     public Text lebenText;
     public int leben;
+    
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -17,14 +19,8 @@ public class lebenGegenspieler : MonoBehaviour
         SetLebenText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetLebenText()
     {
-        lebenText.text = "Lifes: " + leben.ToString();
+       lebenText.text = "Life of GP: " + leben.ToString();
     }
 }
