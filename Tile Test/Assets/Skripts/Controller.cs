@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour
     public Text countText;
     [SerializeField]
     public Text turnText;
-    //public bool Player1;
+    private bool Aktion1;
     public string welcherSpieler;
     private Vector2 direction;
     private Vector2 Playerposition;
@@ -62,10 +62,11 @@ public class Controller : MonoBehaviour
     void Start(){
         //Player1 = true;
         welcherSpieler = "Player1";
-        count = 10;
+        count = 3;
         SetCountText(); 
         turn = 0;   
         SetTurnText();
+        Aktion1 = true;
     }
     void Update() {
         
@@ -140,19 +141,28 @@ public class Controller : MonoBehaviour
         {
             MoveBack();
             BackToPosition = Vector2.zero;
-            count = 10;
+            count = 3;
             SetCountText();
         }
         if(Input.GetKeyDown(KeyCode.U))
         {
           BackToPosition = Vector2.zero;
-          welcherSpieler = "Player2";
-          count = 10;
-          SetCountText();
-          turn = turn + 1;
           
-          SetTurnText();
+          count = 3;
+          SetCountText();
+     if(Aktion1 == false){
+           Aktion1 = true;
+           welcherSpieler = "Player2";
 
+           turn = turn + 1;
+          
+           SetTurnText();
+           
+          }
+        else
+        {
+         Aktion1 = false;
+        }
         }
         
       

@@ -8,6 +8,7 @@ public class Player3Controller : MonoBehaviour
     private Vector2 direction;
     private Vector2 Playerposition;
     private Vector2 BackToPosition;
+    private bool Aktion1;
     
     Controller TurnSpeicher;
     
@@ -15,6 +16,7 @@ public class Player3Controller : MonoBehaviour
     {
         
        TurnSpeicher = GameObject.Find ("Player").GetComponent<Controller> ();
+       Aktion1 = true;
     }
 
    
@@ -69,18 +71,27 @@ public class Player3Controller : MonoBehaviour
          {
              MoveBack();
              BackToPosition = Vector2.zero;
-             TurnSpeicher.count = 10;
+             TurnSpeicher.count = 3;
              TurnSpeicher.SetCountText();
          }
-         if(Input.GetKeyDown(KeyCode.O))
+          if(Input.GetKeyDown(KeyCode.O))
          {
          BackToPosition = Vector2.zero;
-         TurnSpeicher.welcherSpieler = "Player1";
-         TurnSpeicher.count = 10;
-         TurnSpeicher.SetCountText();
-         TurnSpeicher.turn = TurnSpeicher.turn + 1;
          
-         TurnSpeicher.SetTurnText();
+         
+         TurnSpeicher.count = 3;
+         TurnSpeicher.SetCountText();
+         if(Aktion1 == false){
+             Aktion1 = true;
+           TurnSpeicher.welcherSpieler = "Player1";
+           TurnSpeicher.turn = TurnSpeicher.turn + 1;
+           TurnSpeicher.SetTurnText();
+         }
+         else{
+             Aktion1 = false;
+         }
+         
+         
          }
         }
         
