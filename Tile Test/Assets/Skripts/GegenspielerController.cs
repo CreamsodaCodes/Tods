@@ -77,14 +77,14 @@ public class GegenspielerController : MonoBehaviour
          BackToPosition = Vector2.zero;
          TurnSpeicher.Player1 = true;
          count = 10;
-         //SetCountText();
+         TurnSpeicher.SetCountText();
          TurnSpeicher.turn = TurnSpeicher.turn + 1;
          
-         //SetTurnText();
+         TurnSpeicher.SetTurnText();
          }
         }
         else{
-            Debug.Log (count);
+            
         }
     }
 

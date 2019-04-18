@@ -119,12 +119,12 @@ public class Controller : MonoBehaviour
       }
    }
          
-       }
        
        
        
-   }
-   void SetTurnText(){
+       
+   
+   public void SetTurnText(){
        turnText.text = "Turns: " + turn.ToString();
     }
 
@@ -163,6 +163,6 @@ public class Controller : MonoBehaviour
             lifeController.SetLebenText();
         }
     }
-    
+}   
    
 
