@@ -87,5 +87,38 @@ public class GegenspielerController : MonoBehaviour
     }
 
 
+    void OnTriggerStay2D(Collider2D other){
+        if (other.gameObject.CompareTag ("Top")){
+            TurnSpeicher.count = TurnSpeicher.count + 1;
+            TurnSpeicher.SetCountText();
+            direction += Vector2.down;
+            BackToPosition += Vector2.up;
+            Move();
+        }
+        else if (other.gameObject.CompareTag ("Left")){
+            TurnSpeicher.count = TurnSpeicher.count + 1;
+            TurnSpeicher.SetCountText();
+            direction += Vector2.right;
+            BackToPosition += Vector2.left;
+            Move();
+        }
+         else if (other.gameObject.CompareTag ("Right")){
+            TurnSpeicher.count = TurnSpeicher.count + 1;
+            TurnSpeicher.SetCountText();
+            direction += Vector2.left;
+            BackToPosition += Vector2.right;
+            Move();
+        }
+         else if (other.gameObject.CompareTag ("Bottom")){
+            TurnSpeicher.count = TurnSpeicher.count + 1;
+            TurnSpeicher.SetCountText();
+            direction += Vector2.up;
+            BackToPosition += Vector2.down;
+
+            Move();
+        }
+        } 
+
+
 
 }
