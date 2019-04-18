@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField]
-    public lebenGegenspieler lifeController;
+    
     [SerializeField]  
     public Text countText;
     [SerializeField]
@@ -74,7 +73,6 @@ public class Controller : MonoBehaviour
        GetInput();
        Move();
        GetInputBack();
-       inputShot();
        
    }
 
@@ -148,34 +146,28 @@ public class Controller : MonoBehaviour
           
           count = 3;
           SetCountText();
-     if(Aktion1 == false){
-           Aktion1 = true;
-           welcherSpieler = "Player2";
+        if(Aktion1 == false){
+            Aktion1 = true;
+            welcherSpieler = "Player2";
 
-           turn = turn + 1;
-          
-           SetTurnText();
-           
-          }
+            turn = turn + 1;
+            
+            SetTurnText();
+            
+        }
         else
         {
-         Aktion1 = false;
+            Aktion1 = false;
         }
-        }
+            }
+            
         
-      
-    }}
-    void inputShot(){
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            lifeController.leben = lifeController.leben - 1;
-            lifeController.SetLebenText();
-        }
-    }
+        }}
+    
 
     
     
-}  
+}
 
    
 
