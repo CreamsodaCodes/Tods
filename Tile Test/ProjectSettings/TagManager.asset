@@ -11,6 +11,8 @@ TagManager:
   - bulletshoot
   - Top
   - Gegenspieler
+  - Hero
+  - Sichtfeld
   layers:
   - Default
   - TransparentFX

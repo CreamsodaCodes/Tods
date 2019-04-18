@@ -18,6 +18,7 @@ public class Controller : MonoBehaviour
     private Vector2 BackToPosition;
     public int count;
     public int turn;
+    
 
 	/*void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag ("Base")){
@@ -60,7 +61,7 @@ public class Controller : MonoBehaviour
         } 
 
     void Start(){
-        //Player1 = true;
+        
         welcherSpieler = "Player1";
         count = 3;
         SetCountText(); 
@@ -74,6 +75,7 @@ public class Controller : MonoBehaviour
        Move();
        GetInputBack();
        inputShot();
+       
    }
 
    private void Move(){
@@ -166,8 +168,7 @@ public class Controller : MonoBehaviour
         }
         
       
-      }
-    }
+    }}
     void inputShot(){
         if(Input.GetKeyDown(KeyCode.P))
         {
@@ -175,6 +176,11 @@ public class Controller : MonoBehaviour
             lifeController.SetLebenText();
         }
     }
-}   
+
+    
+    
+    
+}  
+
    
 
