@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GegenspielerController : MonoBehaviour
+public class Player3Controller : MonoBehaviour
 {   
     
     private Vector2 direction;
@@ -36,7 +36,7 @@ public class GegenspielerController : MonoBehaviour
    private void GetInput(){
 
        direction = Vector2.zero;
-       if(TurnSpeicher.welcherSpieler == "Player2"){
+       if(TurnSpeicher.welcherSpieler == "Player3"){
        if(TurnSpeicher.count > 0){
         if(Input.GetKeyDown(KeyCode.W)){
             direction += Vector2.up;
@@ -64,7 +64,7 @@ public class GegenspielerController : MonoBehaviour
         }
        }}}
         private void GetInputBack(){
-        if(TurnSpeicher.welcherSpieler == "Player2"){
+        if(TurnSpeicher.welcherSpieler == "Player3"){
          if(Input.GetKeyDown(KeyCode.Z))
          {
              MoveBack();
@@ -72,10 +72,10 @@ public class GegenspielerController : MonoBehaviour
              TurnSpeicher.count = 10;
              TurnSpeicher.SetCountText();
          }
-         if(Input.GetKeyDown(KeyCode.I))
+         if(Input.GetKeyDown(KeyCode.O))
          {
          BackToPosition = Vector2.zero;
-         TurnSpeicher.welcherSpieler = "Player3";
+         TurnSpeicher.welcherSpieler = "Player1";
          TurnSpeicher.count = 10;
          TurnSpeicher.SetCountText();
          TurnSpeicher.turn = TurnSpeicher.turn + 1;

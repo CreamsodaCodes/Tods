@@ -11,7 +11,8 @@ public class Controller : MonoBehaviour
     public Text countText;
     [SerializeField]
     public Text turnText;
-    public bool Player1;
+    //public bool Player1;
+    public string welcherSpieler;
     private Vector2 direction;
     private Vector2 Playerposition;
     private Vector2 BackToPosition;
@@ -59,7 +60,8 @@ public class Controller : MonoBehaviour
         } 
 
     void Start(){
-        Player1 = true;
+        //Player1 = true;
+        welcherSpieler = "Player1";
         count = 10;
         SetCountText(); 
         turn = 0;   
@@ -89,7 +91,7 @@ public class Controller : MonoBehaviour
        direction = Vector2.zero;
        /* ohne des Zero wird des immer mehr also wenn man zweimal w drückt dann ist die richtung stärker als davor und wenn man dann einmal s drückt geht es nicht zurück also wie ne zahl die aber in vier richtungen 
        geht vlht x u nd y mit - und + */
-      if(Player1 == true){
+      if(welcherSpieler == "Player1"){
        if(count > 0){
         if(Input.GetKeyDown(KeyCode.W)){
             direction += Vector2.up;
@@ -133,7 +135,7 @@ public class Controller : MonoBehaviour
     }
     /* count.ToString = irgendeine variable zu dem Text */
     private void GetInputBack(){
-      if(Player1 == true){
+      if(welcherSpieler == "Player1"){
         if(Input.GetKeyDown(KeyCode.Z))
         {
             MoveBack();
@@ -144,7 +146,7 @@ public class Controller : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.U))
         {
           BackToPosition = Vector2.zero;
-          Player1 = false;
+          welcherSpieler = "Player2";
           count = 10;
           SetCountText();
           turn = turn + 1;
