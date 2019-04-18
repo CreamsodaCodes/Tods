@@ -15,7 +15,7 @@ public class Controller : MonoBehaviour
     private Vector2 direction;
     private Vector2 Playerposition;
     private Vector2 BackToPosition;
-    private int count;
+    public int count;
     public int turn;
 
 	/*void OnCollisionEnter2D(Collision2D other){
