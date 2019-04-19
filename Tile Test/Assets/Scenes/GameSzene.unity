@@ -11961,7 +11961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cce429e9f4ed2c48af79a30751bf7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeController: {fileID: 0}
   countText: {fileID: 863224028}
   turnText: {fileID: 1103213103}
   welcherSpieler: 
@@ -12024,7 +12023,7 @@ GameObject:
   - component: {fileID: 1525746366}
   m_Layer: 0
   m_Name: Gegenspieler
-  m_TagString: Hero
+  m_TagString: Gegenspieler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
