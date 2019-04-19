@@ -17,6 +17,7 @@ public class Controller : MonoBehaviour
     private Vector2 BackToPosition;
     public int count;
     public int turn;
+    Leben lifeTester;
     
 
 	/*void OnCollisionEnter2D(Collision2D other){
@@ -67,6 +68,7 @@ public class Controller : MonoBehaviour
         turn = 0;   
         SetTurnText();
         Aktion1 = true;
+        lifeTester = GameObject.Find ("Gegenspieler").GetComponent<Leben> ();
     }
     void Update() {
         
@@ -148,11 +150,21 @@ public class Controller : MonoBehaviour
           SetCountText();
         if(Aktion1 == false){
             Aktion1 = true;
-            welcherSpieler = "Player2";
+            if(lifeTester.isalivePlayer2 == true){
+                welcherSpieler = "Player2";
 
-            turn = turn + 1;
-            
-            SetTurnText();
+                turn = turn + 1;
+                
+                SetTurnText();
+            }
+            else
+            {
+                welcherSpieler = "Player3";
+
+                turn = turn + 1;
+                Debug.Log("funktioniert!");
+                SetTurnText();
+            }
             
         }
         else
