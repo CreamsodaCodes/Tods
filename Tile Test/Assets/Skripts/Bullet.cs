@@ -6,7 +6,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {   
 
-    public lebenGegenspieler BulletController;
 
     [SerializeField]
     private float speed;
@@ -21,9 +20,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D LOL)
     {
-        Debug.Log(LOL.name);
         Destroy(gameObject);
-        Debug.Log(BulletController.leben);
     }
         
 
