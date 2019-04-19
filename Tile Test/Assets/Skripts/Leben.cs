@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Leben : MonoBehaviour
 {
-
+    public bool isalivePlayer2;
     public int Health;
     [SerializeField]
     public Text HealthText;
@@ -19,6 +19,7 @@ public class Leben : MonoBehaviour
         Health = 10;
         SetHealthText();
         SetHealthText2();
+        isalivePlayer2 = true;
     }
 
     // Update is called once per frame
@@ -35,7 +36,9 @@ public class Leben : MonoBehaviour
     }
 
     void Die(){
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        isalivePlayer2 = false;
+        
     }
 
     void SetHealthText(){
