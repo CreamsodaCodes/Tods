@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GegenspielerController : MonoBehaviour
+public class Player3Controller : MonoBehaviour
 {   
     
     private Vector2 direction;
@@ -10,12 +10,12 @@ public class GegenspielerController : MonoBehaviour
     private Vector2 BackToPosition;
     private bool Aktion1;
     
-    Controller TurnSpeicher;
+    Player1Controller TurnSpeicher;
     
     void Start()
     {
         
-       TurnSpeicher = GameObject.Find ("Player").GetComponent<Controller> ();
+       TurnSpeicher = GameObject.Find ("Player").GetComponent<Player1Controller> ();
        Aktion1 = true;
     }
 
@@ -38,7 +38,7 @@ public class GegenspielerController : MonoBehaviour
    private void GetInput(){
 
        direction = Vector2.zero;
-       if(TurnSpeicher.welcherSpieler == "Player2"){
+       if(TurnSpeicher.welcherSpieler == "Player3"){
        if(TurnSpeicher.count > 0){
         if(Input.GetKeyDown(KeyCode.W)){
             direction += Vector2.up;
@@ -66,7 +66,7 @@ public class GegenspielerController : MonoBehaviour
         }
        }}}
         private void GetInputBack(){
-        if(TurnSpeicher.welcherSpieler == "Player2"){
+        if(TurnSpeicher.welcherSpieler == "Player3"){
          if(Input.GetKeyDown(KeyCode.Z))
          {
              MoveBack();
@@ -74,7 +74,7 @@ public class GegenspielerController : MonoBehaviour
              TurnSpeicher.count = 3;
              TurnSpeicher.SetCountText();
          }
-         if(Input.GetKeyDown(KeyCode.I))
+          if(Input.GetKeyDown(KeyCode.O))
          {
          BackToPosition = Vector2.zero;
          
@@ -83,7 +83,7 @@ public class GegenspielerController : MonoBehaviour
          TurnSpeicher.SetCountText();
          if(Aktion1 == false){
              Aktion1 = true;
-           TurnSpeicher.welcherSpieler = "Player3";
+           TurnSpeicher.welcherSpieler = "Player1";
            TurnSpeicher.turn = TurnSpeicher.turn + 1;
            TurnSpeicher.SetTurnText();
          }

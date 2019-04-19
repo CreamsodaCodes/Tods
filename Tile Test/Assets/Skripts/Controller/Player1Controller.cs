@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Controller : MonoBehaviour
+public class Player1Controller : MonoBehaviour
 {
     
     [SerializeField]  

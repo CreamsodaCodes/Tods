@@ -7,14 +7,14 @@ public class SichtfeldPlayer1 : MonoBehaviour
     int call;
     private SpriteRenderer mySichtfeld;
     private BoxCollider2D myHitBox;
-    Controller TurnSpeicher;
+    Player1Controller TurnSpeicher;
     // Start is called before the first frame update
     void Start()
     {
         call = 10;
         mySichtfeld = GetComponent<SpriteRenderer>();
         myHitBox = GetComponent<BoxCollider2D>();
-        TurnSpeicher = GameObject.Find ("Player").GetComponent<Controller> ();
+        TurnSpeicher = GameObject.Find ("Player").GetComponent<Player1Controller> ();
         mySichtfeld.enabled = !mySichtfeld.enabled;
         myHitBox.enabled = !myHitBox.enabled;
 
