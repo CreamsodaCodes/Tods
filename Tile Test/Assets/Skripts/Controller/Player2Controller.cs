@@ -9,12 +9,13 @@ public class Player2Controller : MonoBehaviour
     private Vector2 Playerposition;
     private Vector2 BackToPosition;
     private bool Aktion1;
+    Leben lifeTester;
     
     Player1Controller TurnSpeicher;
     
     void Start()
     {
-        
+       lifeTester = GameObject.Find ("Gegenspieler").GetComponent<Leben> ();
        TurnSpeicher = GameObject.Find ("Player").GetComponent<Player1Controller> ();
        Aktion1 = true;
     }
@@ -83,9 +84,21 @@ public class Player2Controller : MonoBehaviour
          TurnSpeicher.SetCountText();
          if(Aktion1 == false){
              Aktion1 = true;
-           TurnSpeicher.welcherSpieler = "Player3";
-           TurnSpeicher.turn = TurnSpeicher.turn + 1;
-           TurnSpeicher.SetTurnText();
+           if(lifeTester.isalivePlayer3 == true){
+                TurnSpeicher.welcherSpieler = "Player3";
+
+                TurnSpeicher.turn = TurnSpeicher.turn + 1;
+                
+                TurnSpeicher.SetTurnText();
+            }
+            else
+            {
+                TurnSpeicher.welcherSpieler = "Player1";
+
+                TurnSpeicher.turn = TurnSpeicher.turn + 1;
+                
+                TurnSpeicher.SetTurnText();
+            }
          }
          else{
              Aktion1 = false;

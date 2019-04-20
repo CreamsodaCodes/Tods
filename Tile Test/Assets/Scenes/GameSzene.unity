@@ -11161,7 +11161,7 @@ GameObject:
   - component: {fileID: 832734768}
   m_Layer: 0
   m_Name: Player3
-  m_TagString: Hero
+  m_TagString: Player3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11301,6 +11301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isalivePlayer2: 0
+  isalivePlayer3: 0
+  isalivePlayer1: 0
   Health: 0
   HealthText: {fileID: 1897954058}
   Health2: 0
@@ -12208,6 +12210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isalivePlayer2: 0
+  isalivePlayer3: 0
+  isalivePlayer1: 0
   Health: 0
   HealthText: {fileID: 1424674930}
   Health2: 0

@@ -13,6 +13,7 @@ TagManager:
   - Gegenspieler
   - Hero
   - Sichtfeld
+  - Player3
   layers:
   - Default
   - TransparentFX

@@ -162,7 +162,7 @@ public class Player1Controller : MonoBehaviour
                 welcherSpieler = "Player3";
 
                 turn = turn + 1;
-                Debug.Log("funktioniert!");
+                
                 SetTurnText();
             }
             

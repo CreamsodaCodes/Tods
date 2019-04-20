@@ -9,12 +9,12 @@ public class Player3Controller : MonoBehaviour
     private Vector2 Playerposition;
     private Vector2 BackToPosition;
     private bool Aktion1;
-    
+    Leben lifeTester;
     Player1Controller TurnSpeicher;
     
     void Start()
     {
-        
+       lifeTester = GameObject.Find ("Gegenspieler").GetComponent<Leben> (); 
        TurnSpeicher = GameObject.Find ("Player").GetComponent<Player1Controller> ();
        Aktion1 = true;
     }
@@ -66,7 +66,7 @@ public class Player3Controller : MonoBehaviour
         }
        }}}
         private void GetInputBack(){
-        if(TurnSpeicher.welcherSpieler == "Player3"){
+        if(TurnSpeicher.welcherSpieler == "Player2"){
          if(Input.GetKeyDown(KeyCode.Z))
          {
              MoveBack();
@@ -74,7 +74,7 @@ public class Player3Controller : MonoBehaviour
              TurnSpeicher.count = 3;
              TurnSpeicher.SetCountText();
          }
-          if(Input.GetKeyDown(KeyCode.O))
+         if(Input.GetKeyDown(KeyCode.I))
          {
          BackToPosition = Vector2.zero;
          
@@ -83,9 +83,21 @@ public class Player3Controller : MonoBehaviour
          TurnSpeicher.SetCountText();
          if(Aktion1 == false){
              Aktion1 = true;
-           TurnSpeicher.welcherSpieler = "Player1";
-           TurnSpeicher.turn = TurnSpeicher.turn + 1;
-           TurnSpeicher.SetTurnText();
+           if(lifeTester.isalivePlayer1 == true){
+                TurnSpeicher.welcherSpieler = "Player1";
+
+                TurnSpeicher.turn = TurnSpeicher.turn + 1;
+                
+                TurnSpeicher.SetTurnText();
+            }
+            else
+            {
+                TurnSpeicher.welcherSpieler = "Player2";
+
+                TurnSpeicher.turn = TurnSpeicher.turn + 1;
+                
+                TurnSpeicher.SetTurnText();
+            }
          }
          else{
              Aktion1 = false;
@@ -96,6 +108,7 @@ public class Player3Controller : MonoBehaviour
         }
         
     }
+    
 
 
     void OnTriggerStay2D(Collider2D other){
