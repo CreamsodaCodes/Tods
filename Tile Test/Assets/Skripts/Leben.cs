@@ -15,7 +15,7 @@ public class Leben : MonoBehaviour
     public int Health2;
     [SerializeField]
     public Text HealthText2;
-    // Start is called before the first frame update
+    Warscheinlichkeit Getroffen;
     void Start()
     {
         Health = 10;
@@ -24,20 +24,22 @@ public class Leben : MonoBehaviour
         isalivePlayer2 = true;
         isalivePlayer3 = true;
         isalivePlayer1 = true;
+        Getroffen = GameObject.Find ("Player").GetComponent<Warscheinlichkeit> ();
     }
 
-    // Update is called once per frame
-    public void TakeDamage(int damage)
+    
+     public void TakeDamage(int damage)
     {
+        if(Getroffen.Getroffen == true){
         Health -= damage;
         SetHealthText();
         SetHealthText2();
-
+    }
         if(Health <= 0)
         {
             Die();
         }
-    }
+    } 
 
     void Die(){
         gameObject.SetActive(false);
