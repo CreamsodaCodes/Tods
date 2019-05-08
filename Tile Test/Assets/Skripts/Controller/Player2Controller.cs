@@ -86,7 +86,7 @@ public class Player2Controller : MonoBehaviour
              Aktion1 = true;
            if(lifeTester.isalivePlayer3 == true){
                 TurnSpeicher.welcherSpieler = "Player3";
-
+                Debug.Log("am Leben");
                 TurnSpeicher.turn = TurnSpeicher.turn + 1;
                 
                 TurnSpeicher.SetTurnText();
@@ -94,7 +94,7 @@ public class Player2Controller : MonoBehaviour
             else
             {
                 TurnSpeicher.welcherSpieler = "Player1";
-
+                Debug.Log("Nicht am Leben");
                 TurnSpeicher.turn = TurnSpeicher.turn + 1;
                 
                 TurnSpeicher.SetTurnText();

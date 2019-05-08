@@ -66,7 +66,7 @@ public class Player3Controller : MonoBehaviour
         }
        }}}
         private void GetInputBack(){
-        if(TurnSpeicher.welcherSpieler == "Player2"){
+        if(TurnSpeicher.welcherSpieler == "Player3"){
          if(Input.GetKeyDown(KeyCode.Z))
          {
              MoveBack();
@@ -74,7 +74,7 @@ public class Player3Controller : MonoBehaviour
              TurnSpeicher.count = 3;
              TurnSpeicher.SetCountText();
          }
-         if(Input.GetKeyDown(KeyCode.I))
+         if(Input.GetKeyDown(KeyCode.O))
          {
          BackToPosition = Vector2.zero;
          
@@ -90,7 +90,7 @@ public class Player3Controller : MonoBehaviour
                 
                 TurnSpeicher.SetTurnText();
             }
-            else
+            else if(lifeTester.isalivePlayer2 == true)
             {
                 TurnSpeicher.welcherSpieler = "Player2";
 

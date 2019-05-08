@@ -22,6 +22,8 @@ public class Leben : MonoBehaviour
         SetHealthText();
         SetHealthText2();
         isalivePlayer2 = true;
+        isalivePlayer3 = true;
+        isalivePlayer1 = true;
     }
 
     // Update is called once per frame
